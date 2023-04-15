@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_5mdp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileImage"
+        android:layout_width="@dimen/_60mdp"
+        android:layout_height="@dimen/_60mdp"
+        android:src="@color/colorAccent"
+        app:civ_border_color="@color/colorAccent"
+        app:civ_border_width="2dp" />
+
+    <TextView
+        android:id="@+id/nameTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/profileImage"
+        android:layout_toRightOf="@id/profileImage"
+        android:padding="@dimen/_6mdp"
+        android:text="@string/userName"
+        android:textSize="@dimen/_14font_mdp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/statusTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nameTV"
+        android:layout_toEndOf="@id/profileImage"
+        android:layout_toRightOf="@id/profileImage"
+        android:paddingStart="@dimen/_6mdp"
+        android:paddingEnd="@dimen/_6mdp"
+        android:textSize="@dimen/_10font_mdp"
+        android:text="@string/status"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

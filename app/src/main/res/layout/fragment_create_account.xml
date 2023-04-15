@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    tools:context=".fragments.CreateAccountFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12mdp"
+        android:layout_marginLeft="@dimen/_12mdp"
+        android:layout_marginTop="@dimen/_58mdp"
+        android:text="@string/createAccount"
+        android:textColor="@color/colorGreen"
+        android:textSize="@dimen/_22font_mdp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <EditText
+            android:id="@+id/nameET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_9mdp"
+            android:inputType="text"
+            android:layout_margin="@dimen/_6mdp"
+            android:background="@drawable/text_box"
+            android:hint="@string/name"/>
+
+        <EditText
+            android:id="@+id/emailET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_9mdp"
+            android:inputType="textEmailAddress"
+            android:layout_margin="@dimen/_6mdp"
+            android:background="@drawable/text_box"
+            android:hint="@string/email"/>
+
+        <EditText
+            android:id="@+id/passwordET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_9mdp"
+            android:inputType="textPassword"
+            android:layout_margin="@dimen/_6mdp"
+            android:background="@drawable/text_box"
+            android:hint="@string/password"/>
+
+
+        <EditText
+            android:id="@+id/confirmPassET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_9mdp"
+            android:inputType="textPassword"
+            android:layout_margin="@dimen/_6mdp"
+            android:background="@drawable/text_box"
+            android:hint="@string/confirmPassword"/>
+    </LinearLayout>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/ll1"
+        android:visibility="gone"
+        android:layout_above="@id/signUpBtn"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/signUp"
+        android:background="@drawable/btn_bg"
+        android:layout_marginStart="@dimen/_24mdp"
+        android:layout_marginEnd="@dimen/_24mdp"
+        android:textColor="#fff"
+        android:layout_above="@id/loginTV"
+        android:layout_marginBottom="@dimen/_14mdp"
+        android:id="@+id/signUpBtn"/>
+
+
+    <TextView
+        android:id="@+id/loginTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_20mdp"
+        android:text="@string/goBackToLogin"
+        android:textColor="@color/colorGreen"
+        android:textStyle="bold" />
+</RelativeLayout>

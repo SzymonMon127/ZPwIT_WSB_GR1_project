@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    tools:context=".fragments.LoginFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12mdp"
+        android:layout_marginLeft="@dimen/_12mdp"
+        android:layout_marginTop="@dimen/_58mdp"
+        android:text="@string/login"
+        android:textColor="@color/colorGreen"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/emailET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_6mdp"
+            android:background="@drawable/text_box"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:padding="@dimen/_9mdp" />
+
+        <EditText
+            android:id="@+id/passwordET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_6mdp"
+            android:background="@drawable/text_box"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:padding="@dimen/_9mdp" />
+
+        <TextView
+            android:id="@+id/forgotTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/_12mdp"
+            android:text="@string/forgotPassword"
+            android:textColor="@color/colorGreen"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/loginBtn"
+        android:layout_below="@id/ll1"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/googleSignInBtn"
+        android:layout_marginStart="@dimen/_24mdp"
+        android:layout_marginEnd="@dimen/_24mdp"
+        android:layout_marginBottom="@dimen/_14mdp"
+        android:background="@drawable/btn_bg"
+        android:text="@string/SignIn"
+        android:textColor="#fff" />
+
+    <Button
+        android:id="@+id/googleSignInBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/signUpTV"
+        android:layout_marginStart="@dimen/_24mdp"
+        android:layout_marginEnd="@dimen/_24mdp"
+        android:layout_marginBottom="@dimen/_14mdp"
+        android:background="@drawable/btn_bg"
+        android:text="@string/signInWithGoogle"
+        android:textColor="#fff" />
+
+    <TextView
+        android:id="@+id/signUpTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_20mdp"
+        android:text="@string/createAccountNoEnter"
+        android:textColor="@color/colorGreen"
+        android:textStyle="bold" />
+
+</RelativeLayout>

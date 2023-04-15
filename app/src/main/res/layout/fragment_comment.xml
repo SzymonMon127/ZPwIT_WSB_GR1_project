@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.Comment">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileImage"
+        android:layout_width="@dimen/_36mdp"
+        android:layout_height="@dimen/_36mdp"
+        android:layout_marginStart="@dimen/_5mdp"
+        android:layout_marginTop="@dimen/_5mdp"
+        android:layout_marginEnd="@dimen/_5mdp"
+        android:layout_marginBottom="@dimen/_5mdp"
+        android:src="@drawable/ic_person"
+        android:layout_alignParentStart="true"
+        app:civ_border_color="#434343"
+        app:civ_border_width="1dp" />
+
+    <ImageView
+        android:id="@+id/delete"
+        android:layout_width="@dimen/_24mdp"
+        android:layout_height="@dimen/_24mdp"
+        android:layout_marginStart="@dimen/_10mdp"
+        android:layout_marginTop="@dimen/_5mdp"
+        android:layout_marginEnd="@dimen/_10mdp"
+        android:layout_marginBottom="@dimen/_5mdp"
+        android:background="@drawable/editing"
+            android:layout_toStartOf="@id/edit"
+        app:civ_border_color="#434343"
+        android:visibility="gone"
+        app:civ_border_width="1dp" />
+
+
+    <ImageView
+        android:id="@+id/edit"
+        android:layout_width="@dimen/_24mdp"
+        android:layout_height="@dimen/_24mdp"
+        android:layout_marginStart="@dimen/_10mdp"
+        android:layout_marginTop="@dimen/_5mdp"
+        android:layout_marginEnd="@dimen/_10mdp"
+        android:layout_marginBottom="@dimen/_5mdp"
+        android:src="@drawable/delete"
+        app:civ_border_color="#434343"
+        android:visibility="gone"
+        android:layout_alignParentEnd="true"
+        app:civ_border_width="1dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_36mdp"
+        android:layout_marginTop="@dimen/_6mdp"
+        android:layout_marginBottom="@dimen/_6mdp"
+        android:layout_toEndOf="@id/profileImage"
+        android:layout_toRightOf="@id/profileImage"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nameTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="@dimen/_11font_mdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/timeTv"
+            android:textSize="@dimen/_11font_mdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/descTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profileImage"
+        android:paddingStart="@dimen/_6mdp"
+        android:paddingEnd="@dimen/_6mdp"
+        android:textSize="@dimen/_12font_mdp"
+        android:maxLines="3"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_130mdp"
+        android:layout_below="@id/descTv"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/likeBtn"
+            android:layout_width="@dimen/_20mdp"
+            android:layout_height="@dimen/_20mdp"
+            android:layout_margin="@dimen/_5mdp"
+            android:button="@drawable/heart_check" />
+
+
+        <ImageButton
+            android:id="@+id/shareBtn"
+            android:layout_width="@dimen/_20mdp"
+            android:layout_height="@dimen/_20mdp"
+            android:layout_margin="@dimen/_5mdp"
+            android:background="@drawable/ic_share" />
+
+
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/likeCountTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout"
+        android:paddingStart="@dimen/_6mdp"
+        android:paddingEnd="@dimen/_6mdp"
+        android:textSize="@dimen/_12font_mdp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/commentTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/likeCountTv"
+        android:padding="@dimen/_6mdp"
+        android:textSize="@dimen/_12font_mdp"
+        android:text="@string/viewAllComments"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/commentCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/likeCountTv"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10font_mdp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/commentRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@id/commentLayout"
+        android:layout_below="@+id/commentCount" />
+
+
+    <LinearLayout
+        android:padding="@dimen/_4mdp"
+        android:id="@+id/commentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/commentET"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/text_box"
+            android:padding="@dimen/_9mdp"
+            android:inputType="text"
+            android:hint="@string/EnterComment" />
+
+        <ImageButton
+            android:id="@+id/sendBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:background="@drawable/ic_circle"
+            android:elevation="1dp"
+            android:src="@drawable/ic_send" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
